@@ -29,33 +29,39 @@ const AboutSection = () => {
   return (
     <div id="about" className="max-w-5xl mx-auto mt-15 md:mt-20">
       <p className="text-sm text-primary text-center font-semibold mb-5">Why Choose Us?</p>
-      <h1 className="text-5xl mb-5">Your Smile, Our Mission</h1>
-      <h2 className="max-w-md text-xl text-base-content/60">
-        Discover what makes our clinic the trusted choice for brighter, healthier smiles.
-      </h2>
 
-      <div className="grid grid-cols-2 gap-6 p-6 items-center">
+      <div className="px-6 text-center leading-20">
+        <h1 className="text-2xl sm:text-3xl md:text-[50px] mb-5">
+          Your <span className="text-primary font-black">Smile</span>, Our <span className="text-primary font-black">Mission</span>
+        </h1>
+        <h2 className="text-base-content/60 text-xs md:text-xl">
+          Discover what makes our clinic the trusted choice for brighter, healthier smiles.
+        </h2>
+      </div>
 
-        <div className="space-y-4">
+
+      <div className="grid md:grid-cols-2 gap-6 p-6 items-center">
+
+        <div className="grid grid-cols-3 md:grid-cols-1 gap-2">
           {aboutInfo.map((about, index) => (
             <div
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`px-6 py-4 rounded-full cursor-pointer transition 
-                flex items-center gap-2
+              className={`p-2 md:px-6 md:py-4 rounded-2xl md:rounded-full cursor-pointer transition 
+                flex flex-col md:flex-row items-center gap-2
               ${index === selectedIndex ? 'bg-primary/10' : 'border border-base-300'}
             `}
             >
               <div
-                className='w-20 h-10 rounded-full flex items-center justify-center
+                className='size-10 md:w-20 md:h-10 rounded-full flex items-center justify-center
                 transition duration-300 border border-primary'
               >
                 {about.icon}
               </div>
 
               <div>
-                <h3 className="text-md font-semibold text-primary">{about.title}</h3>
-                <p className="text-xs text-base-content/70">{about.content}</p>
+                <h3 className="text-xs md:text-md text-center font-semibold text-primary">{about.title}</h3>
+                <p className="hidden md:block text-xs text-base-content/70">{about.content}</p>
               </div>
             </div>
           ))}

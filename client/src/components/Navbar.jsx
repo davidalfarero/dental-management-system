@@ -5,7 +5,9 @@ import { Menu, Moon, Sun, X } from 'lucide-react';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem('theme') === 'dark';
+  });
 
   const navlinks = [
     { name: 'About', href: '#about' },
@@ -24,10 +26,28 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const theme = darkMode ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [darkMode]);
+
   return (
-    <nav className={`fixed top-0 w-full h-15 md:h-20 flex items-center border-b border-base-300 z-50
+    <nav className={`fixed top-0 w-full h-15 md:h-20 flex items-center z-50
       ${scrolled
-        ? 'bg-base-100/60 backdrop-blur-md border-b border-base-300 shadow-sm'
+        ? 'bg-base-100/60 backdrop-blur-md shadow-sm'
         : 'bg-base-100'}
       }
       `}
@@ -36,6 +56,8 @@ const Navbar = () => {
       <div className='max-w-5xl mx-auto w-full flex items-center justify-between gap-4 px-4'>
 
         <div className='flex-1 md:flex-none'>
+
+          {/* logo */}
           <a href='/' className="text-lg flex items-center gap-2">
             <div className="avatar">
               <div className="w-10 rounded-full">
