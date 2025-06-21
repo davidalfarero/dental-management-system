@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
+import { SectionTitle } from './UI';
 
 const aboutInfo = [
   {
@@ -27,17 +28,17 @@ const AboutSection = () => {
   const selectedAbout = aboutInfo[selectedIndex];
 
   return (
-    <div id="about" className="max-w-5xl mx-auto mt-15 md:mt-20">
+    <section id="about" className="max-w-5xl mx-auto pt:15 md:pt-20">
       <p className="text-sm text-primary text-center font-semibold mb-5">Why Choose Us?</p>
 
-      <div className="px-6 text-center leading-20">
-        <h1 className="text-2xl sm:text-3xl md:text-[50px] mb-5">
-          Your <span className="text-primary font-black">Smile</span>, Our <span className="text-primary font-black">Mission</span>
-        </h1>
-        <h2 className="text-base-content/60 text-xs md:text-xl">
-          Discover what makes our clinic the trusted choice for brighter, healthier smiles.
-        </h2>
-      </div>
+      <SectionTitle
+        title={
+          <>
+            Your <span className="text-primary font-black">Smile</span>, Our <span className="text-primary font-black">Mission</span>
+          </>
+        }
+        subtitle='Discover what makes our clinic the trusted choice for brighter, healthier smiles.'
+      />
 
 
       <div className="grid md:grid-cols-2 gap-6 p-6 items-center">
@@ -77,7 +78,7 @@ const AboutSection = () => {
 
       </div>
 
-    </div >
+    </section >
   );
 };
 export default AboutSection;

@@ -51,14 +51,13 @@ const Navbar = () => {
         : 'bg-base-100'}
       }
       `}
-
     >
       <div className='max-w-5xl mx-auto w-full flex items-center justify-between gap-4 px-4'>
 
         <div className='flex-1 md:flex-none'>
 
           {/* logo */}
-          <a href='/' className="text-lg flex items-center gap-2">
+          <a href='#home' className="text-lg flex items-center gap-2">
             <div className="avatar">
               <div className="w-10 rounded-full">
                 <img src="/dental-logo.png" alt="Logo" />
@@ -81,15 +80,21 @@ const Navbar = () => {
           ))}
         </div>
 
+        {/* Theme toggle */}
         <div
           onClick={() => setDarkMode((prev) => !prev)}
           className='cursor-pointer p-2 rounded-xl hover:bg-base-300 transition-colors'
         >
-          {darkMode ? <Sun className='text-yellow-400' /> : <Moon />}
+          {darkMode ? <Sun className='text-yellow-400 size-5' /> : <Moon className='size-5' />}
         </div>
 
         {/* Todo: Book online function */}
-        <Button>Book Online</Button>
+        <Button
+          className='bg-primary text-primary-content border border-primary
+          hover:bg-base-100 hover:text-primary transition-colors duration-200'
+        >
+          Book Online
+        </Button>
 
         {/* Mobile navlinks */}
         <div

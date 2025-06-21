@@ -1,4 +1,5 @@
-import { Calendar, Clock, Lock, Mail, MapPin, Phone } from "lucide-react";
+import { Calendar, Clock, Lock, Mail, MapPin, Phone, SquareChevronUp } from "lucide-react";
+import { Tooltip } from "./UI";
 
 const Footer = () => {
   return (
@@ -78,10 +79,19 @@ const Footer = () => {
 
       <div className="max-w-5xl mx-auto border-1 border-base-content/20 my-8"></div>
 
-      <div className="max-w-5xl mx-auto flex gap-4">
-        <p className="text-base-content/60 text-sm flex-1 font-semibold">@ 2025 Dental Clinic. All Rights Reserved.</p>
-        <p className="text-base-content/60 text-xs">Terms of Use</p>
-        <p className="text-base-content/60 text-xs">Privacy Policy</p>
+      <div className="max-w-5xl mx-auto flex justify-between items-center gap-4">
+        <p className="text-base-content/60 text-sm font-semibold">@ 2025 Dental Clinic. All Rights Reserved.</p>
+
+        <div className="cursor-pointer p-2 rounded-xl hover:bg-base-200 transition-colors">
+          <Tooltip text='Home' position="top">
+            <a href="#home"><SquareChevronUp className="size-5 text-primary" /></a>
+          </Tooltip>
+        </div>
+
+        <div className="flex gap-4">
+          <p className="text-base-content/60 text-xs">Terms of Use</p>
+          <p className="text-base-content/60 text-xs">Privacy Policy</p>
+        </div>
       </div>
 
     </footer>

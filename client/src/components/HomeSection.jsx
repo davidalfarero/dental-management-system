@@ -6,7 +6,7 @@ const HomeSection = () => {
   ];
 
   return (
-    <main className="relative h-[calc(100vh-3.75rem)] md:h-[calc(100vh-5rem)] mt-15 md:mt-20">
+    <main id="home" className="relative h-[calc(100vh-3.75rem)] md:h-[calc(100vh-5rem)] pt-15 md:pt-20 mb-15">
       <div className="absolute w-full h-full opacity-60">
         <img
           src="/dental-cover-photo.jpg"
