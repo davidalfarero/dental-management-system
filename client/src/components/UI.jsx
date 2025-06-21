@@ -1,3 +1,5 @@
+import { ArrowLeft, ArrowRight } from "lucide-react";
+
 export const Button = ({
   children,
   className = "",
@@ -35,5 +37,24 @@ export const SectionTitle = ({ title, subtitle }) => (
   <div className="text-center max-w-2xl mx-auto mb-5 px-4">
     <h1 className="text-2xl sm:text-3xl md:text-[50px] mb-5">{title}</h1>
     <h2 className="text-base-content/60 text-xs md:text-xl">{subtitle}</h2>
+  </div>
+);
+
+export const SwiperNavButtons = ({ prevRef, nextRef }) => (
+  <div className="flex justify-center gap-4 mt-6">
+    <button
+      ref={prevRef}
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
+      aria-label="Previous testimonial"
+    >
+      <ArrowLeft className="w-5 h-5" />
+    </button>
+    <button
+      ref={nextRef}
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600 transition"
+      aria-label="Next testimonial"
+    >
+      <ArrowRight className="w-5 h-5" />
+    </button>
   </div>
 );

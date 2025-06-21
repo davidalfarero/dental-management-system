@@ -63,7 +63,7 @@ const Navbar = () => {
                 <img src="/dental-logo.png" alt="Logo" />
               </div>
             </div>
-            <span className='hidden md:inline text-primary font-black'>Dental Clinic</span>
+            <span className='text-sm md:text-xl text-primary font-black'>Dental Clinic</span>
           </a>
         </div>
 
