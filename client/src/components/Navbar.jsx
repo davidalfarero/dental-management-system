@@ -89,8 +89,7 @@ const Navbar = () => {
         </div>
 
         {/* Todo: Book online function */}
-        <Button
-        >
+        <Button className='bg-primary'>
           Book Online
         </Button>
 

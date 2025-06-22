@@ -6,7 +6,7 @@ export const Button = ({
   ...props }) => (
   <button
     {...props}
-    className={`rounded-full shadow-lg bg-primary text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease
+    className={`rounded-full shadow-lg text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease
       ${className}`}
   >
     {children}

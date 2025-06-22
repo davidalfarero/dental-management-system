@@ -38,10 +38,13 @@ const ServiceSection = () => {
 
       {/* todo: create page for complete lists of services */}
       <Button
-        className="mx-auto mb-5 flex items-center gap-2"
+        className="mx-auto mb-5 flex items-center gap-2 bg-primary"
         aria-label="See all services"
       >
-        See All <ArrowRight size={20} />
+        See All
+        <div className="rounded-full bg-white p-1 text-primary">
+          <ArrowRight size={20} />
+        </div>
       </Button>
 
     </section>

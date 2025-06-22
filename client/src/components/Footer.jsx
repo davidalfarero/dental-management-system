@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
           <div className="flex gap-2 mb-2">
             <Lock className="size-4 text-primary" />
-            <p className="text-base-content/60 text-xs">Sunday</p>
+            <p className="text-base-content/60 text-xs">Sunday: Closed</p>
           </div>
         </div>
       </div>
