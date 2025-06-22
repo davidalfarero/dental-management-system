@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
-import { SectionTitle } from './UI';
+import { SectionTitle } from '../styles/UI';
 
 const aboutInfo = [
   {
@@ -41,7 +41,7 @@ const AboutSection = () => {
       />
 
 
-      <div className="grid md:grid-cols-2 gap-6 p-6 items-center">
+      <div className="grid md:grid-cols-2 gap-6 p-4 items-center">
 
         <div className="grid grid-cols-3 md:grid-cols-1 gap-2">
           {aboutInfo.map((about, index) => (

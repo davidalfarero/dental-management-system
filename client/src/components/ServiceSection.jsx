@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { services } from "../data/services";
-import { Button, SectionTitle } from "./UI";
+import { Button, SectionTitle } from "../styles/UI";
 
 const ServiceSection = () => {
   return (
@@ -38,8 +38,7 @@ const ServiceSection = () => {
 
       {/* todo: create page for complete lists of services */}
       <Button
-        className="mx-auto mb-5 flex items-center gap-2 border border-primary text-primary 
-        hover:bg-primary hover:text-white transition-colors duration-200"
+        className="mx-auto mb-5 flex items-center gap-2"
         aria-label="See all services"
       >
         See All <ArrowRight size={20} />

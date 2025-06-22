@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { testimonials } from "../data/testimonials";
-import { SectionTitle, SwiperNavButtons } from "./UI";
+import { SectionTitle, SwiperNavButtons } from "../styles/UI";
 
 const TestimonialsSection = () => {
   const prevRef = useRef(null);

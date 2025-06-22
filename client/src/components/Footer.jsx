@@ -1,5 +1,5 @@
 import { Calendar, Clock, Lock, Mail, MapPin, Phone, SquareChevronUp } from "lucide-react";
-import { Tooltip } from "./UI";
+import { Tooltip } from "../styles/UI";
 
 const Footer = () => {
   return (

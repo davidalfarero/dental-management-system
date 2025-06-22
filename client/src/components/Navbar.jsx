@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Button } from './UI';
+import { Button } from '../styles/UI';
 import { Menu, Moon, Sun, X } from 'lucide-react';
 
 const Navbar = () => {
@@ -90,8 +90,6 @@ const Navbar = () => {
 
         {/* Todo: Book online function */}
         <Button
-          className='bg-primary text-primary-content border border-primary
-          hover:bg-base-100 hover:text-primary transition-colors duration-200'
         >
           Book Online
         </Button>

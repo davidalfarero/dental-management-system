@@ -6,7 +6,8 @@ export const Button = ({
   ...props }) => (
   <button
     {...props}
-    className={`rounded-full shadow-lg text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer ${className}`}
+    className={`rounded-full shadow-lg bg-primary text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease
+      ${className}`}
   >
     {children}
   </button>
@@ -35,7 +36,7 @@ export const Tooltip = ({ children, text, position = "" }) => {
 
 export const SectionTitle = ({ title, subtitle }) => (
   <div className="text-center max-w-2xl mx-auto mb-5 px-4">
-    <h1 className="text-2xl sm:text-3xl md:text-[50px] mb-5">{title}</h1>
+    <h1 className="text-2xl sm:text-3xl md:text-[50px]">{title}</h1>
     <h2 className="text-base-content/60 text-xs md:text-xl">{subtitle}</h2>
   </div>
 );
@@ -56,5 +57,28 @@ export const SwiperNavButtons = ({ prevRef, nextRef }) => (
     >
       <ArrowRight className="w-5 h-5" />
     </button>
+  </div>
+);
+
+export const InputField = ({ icon: Icon, ...props }) => (
+  <div className="relative mb-4">
+    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <Icon className='size-5 text-primary/50' />
+    </div>
+    <input
+      {...props}
+      className='rounded-lg px-3 py-2 pl-10 w-full border border-base-content/20 placeholder:base-content/60
+      focus:border-primary focus:outline-none'
+    />
+  </div>
+);
+
+export const MessageField = ({ ...props }) => (
+  <div className="mb-4">
+    <textarea
+      {...props}
+      className='rounded-lg px-3 py-2 w-full border border-base-content/20 placeholder:base-content/60
+      focus:border-primary focus:outline-none resize-none'
+    />
   </div>
 );
