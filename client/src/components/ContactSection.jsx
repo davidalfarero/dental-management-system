@@ -112,12 +112,12 @@ const ContactSection = () => {
             />
           </label>
 
-          {/* todo: set fix row */}
           <label htmlFor="message" className="text-sm md:text-base">
             Message
             <MessageField
               id='message'
               placeholder='Your message...'
+              rows='4'
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
