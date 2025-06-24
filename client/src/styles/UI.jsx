@@ -45,14 +45,14 @@ export const SwiperNavButtons = ({ prevRef, nextRef }) => (
   <div className="flex justify-center gap-4 mt-6">
     <button
       ref={prevRef}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 border border-neutral-300 text-gray-600 hover:bg-gray-100 transition"
       aria-label="Previous testimonial"
     >
       <ArrowLeft className="w-5 h-5" />
     </button>
     <button
       ref={nextRef}
-      className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-white hover:bg-blue-600 transition"
+      className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-500 text-neutral-100 hover:bg-blue-600 transition"
       aria-label="Next testimonial"
     >
       <ArrowRight className="w-5 h-5" />

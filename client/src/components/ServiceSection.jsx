@@ -42,7 +42,7 @@ const ServiceSection = () => {
         aria-label="See all services"
       >
         See All
-        <div className="rounded-full bg-white p-1 text-primary">
+        <div className="rounded-full bg-neutral-100 p-1 text-primary">
           <ArrowRight size={20} />
         </div>
       </Button>
