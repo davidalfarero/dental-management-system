@@ -45,86 +45,88 @@ const Navbar = () => {
   }, [darkMode]);
 
   return (
-    <nav className={`fixed top-0 w-full h-15 md:h-20 flex items-center z-50
+    <>
+      <nav className={`fixed top-0 w-full h-15 md:h-20 flex items-center z-50
       ${scrolled
-        ? 'bg-base-100/60 backdrop-blur-md shadow-sm'
-        : 'bg-base-100'}
+          ? 'bg-base-100/60 backdrop-blur-md shadow-sm'
+          : 'bg-base-100'}
       }
       `}
-    >
-      <div className='max-w-5xl mx-auto w-full flex items-center justify-between gap-4 px-4'>
+      >
+        <div className='max-w-5xl mx-auto w-full flex items-center justify-between gap-4 px-4'>
 
-        <div className='flex-1 md:flex-none'>
+          <div className='flex-1 md:flex-none'>
 
-          {/* logo */}
-          <a href='#home' className="text-lg flex items-center gap-2">
-            <div className="avatar">
-              <div className="w-10 rounded-full">
-                <img src="/dental-logo.png" alt="Logo" />
+            {/* logo */}
+            <a href='#home' className="text-lg flex items-center gap-2">
+              <div className="avatar">
+                <div className="w-10 rounded-full">
+                  <img src="/dental-logo.png" alt="Logo" />
+                </div>
               </div>
-            </div>
-            <span className='text-sm md:text-xl text-primary font-black'>Dental Clinic</span>
-          </a>
-        </div>
-
-        <div className="hidden md:block space-x-4">
-          {navlinks.map(({ name, href }, index) => (
-            <a
-              key={index}
-              href={href}
-              className='cursor-pointer font-semibold text-sm
-            hover:text-primary hover:border-b-3 transition-colors'
-            >
-              {name}
+              <span className='text-sm md:text-xl text-primary font-black'>Dental Clinic</span>
             </a>
-          ))}
-        </div>
+          </div>
 
-        {/* Theme toggle */}
-        <div
-          onClick={() => setDarkMode((prev) => !prev)}
-          className='cursor-pointer p-2 rounded-xl hover:bg-base-300 transition-colors'
-        >
-          {darkMode ? <Sun className='text-yellow-400 size-5' /> : <Moon className='size-5' />}
-        </div>
-
-        {/* Todo: Book online function */}
-        <Button className='bg-primary'>
-          Book Online
-        </Button>
-
-        {/* Mobile navlinks */}
-        <div
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className='md:hidden z-60 cursor-pointer'
-        >
-          {isMenuOpen ? <X className='text-white' /> : <Menu />}
-        </div>
-
-        <div
-          className={`md:hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 transition-opacity
-          ${isMenuOpen ?
-              'opacity-100 pointer-events-auto' :
-              'opacity-0 pointer-events-none'
-            }
-          `}
-        >
-          <div className='flex flex-col gap-8'>
+          <div className="hidden md:block space-x-4">
             {navlinks.map(({ name, href }, index) => (
               <a
                 key={index}
                 href={href}
-                onClick={() => setIsMenuOpen(false)}
-                className='text-center text-white font-semibold text-xl'
+                className='cursor-pointer font-semibold text-sm
+            hover:text-primary hover:border-b-3 transition-colors'
               >
                 {name}
               </a>
             ))}
           </div>
-        </div>
-      </div>
 
-    </nav>
+          {/* Theme toggle */}
+          <div
+            onClick={() => setDarkMode((prev) => !prev)}
+            className='cursor-pointer p-2 rounded-xl hover:bg-base-300 transition-colors'
+          >
+            {darkMode ? <Sun className='text-yellow-400 size-5' /> : <Moon className='size-5' />}
+          </div>
+
+          {/* Todo: Book online function */}
+          <Button className='bg-primary'>
+            Book Online
+          </Button>
+
+          {/* Mobile navlinks */}
+          <div
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className='md:hidden z-60 cursor-pointer'
+          >
+            {isMenuOpen ? <X className='text-white' /> : <Menu />}
+          </div>
+
+          <div
+            className={`md:hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 transition-opacity
+          ${isMenuOpen ?
+                'opacity-100 pointer-events-auto' :
+                'opacity-0 pointer-events-none'
+              }
+          `}
+          >
+            <div className='flex flex-col gap-8'>
+              {navlinks.map(({ name, href }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className='text-center text-white font-semibold text-xl'
+                >
+                  {name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </nav>
+    </>
   );
 };
 export default Navbar;

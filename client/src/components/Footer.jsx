@@ -4,13 +4,13 @@ import { Tooltip } from "../styles/UI";
 const Footer = () => {
   return (
     <footer className="bg-base-300 p-6 w-full">
-      <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-6 gap-4">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-4">
 
         {/* Logo */}
-        <div>
+        <div className="flex-1">
           <a href='/' className="text-lg flex items-center gap-2">
             <div className="avatar">
-              <div className="w-10 rounded-full">
+              <div className="flex-none w-10 rounded-full">
                 <img src="/dental-logo.png" alt="Logo" />
               </div>
             </div>
@@ -19,6 +19,7 @@ const Footer = () => {
 
           <p className="text-base-content/60 text-xs">Our mission is to provide compassionate, high-quality dental care in a comfortable environment</p>
         </div>
+
 
         <div>
           <p className="font-semibold mb-4 text-sm">Quick Links</p>
@@ -41,19 +42,19 @@ const Footer = () => {
         <div>
           <p className="font-semibold mb-4 text-sm">Get In Touch</p>
           <div className="flex gap-2 mb-2">
-            <Phone className="size-4 text-primary" />
+            <Phone className="flex-none size-4 text-primary" />
             <p className="text-base-content/60 text-xs">+639-123-456-789</p>
           </div>
           <div className="flex gap-2">
-            <Mail className="size-4 text-primary" />
+            <Mail className="flex-none size-4 text-primary" />
             <p className="text-base-content/60 text-xs">support@mail.com</p>
           </div>
         </div>
 
-        <div>
+        <div className="w-[120px]">
           <p className="font-semibold mb-4 text-sm">Location</p>
           <div className="flex gap-2 mb-2">
-            <MapPin className="size-4 text-primary" />
+            <MapPin className="flex-none size-4 text-primary" />
             <p className="text-base-content/60 text-xs">123 Main Street, Springfield, PHI</p>
           </div>
         </div>
@@ -61,17 +62,17 @@ const Footer = () => {
         <div>
           <p className="font-semibold mb-4 text-sm">Working Days</p>
           <div className="flex gap-2 mb-2">
-            <Calendar className="size-4 text-primary" />
+            <Calendar className="flex-none size-4 text-primary" />
             <div>
               <p className="text-base-content/60 text-xs">Monday - Saturday</p>
             </div>
           </div>
           <div className="flex gap-2 mb-2">
-            <Clock className="size-4 text-primary" />
+            <Clock className="flex-none size-4 text-primary" />
             <p className="text-base-content/60 text-xs">9:00 AM - 5:00 PM</p>
           </div>
           <div className="flex gap-2 mb-2">
-            <Lock className="size-4 text-primary" />
+            <Lock className="flex-none size-4 text-primary" />
             <p className="text-base-content/60 text-xs">Sunday: Closed</p>
           </div>
         </div>

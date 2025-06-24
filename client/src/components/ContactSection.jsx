@@ -123,7 +123,7 @@ const ContactSection = () => {
             />
           </label>
 
-          <div className='h-6 mb-4'>
+          <div className='h-6'>
             {status === 'success' && (
               <p className="text-green-600 text-sm mt-2">Your booking request has been sent!</p>
             )}

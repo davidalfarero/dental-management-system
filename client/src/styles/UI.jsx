@@ -61,7 +61,7 @@ export const SwiperNavButtons = ({ prevRef, nextRef }) => (
 );
 
 export const InputField = ({ icon: Icon, ...props }) => (
-  <div className="relative mb-4">
+  <div className="relative mb-4 ">
     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
       <Icon className='size-5 text-primary/50' />
     </div>
