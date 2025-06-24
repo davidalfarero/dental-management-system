@@ -54,7 +54,7 @@ const TestimonialsSection = () => {
                     className="absolute top-0 left-1 w-10 h-10 opacity-60" />
 
                   <div className="h-12">
-                    <p className="text-xs">{testimonial.review}</p>
+                    <p className="text-xs text-base-content/80">{testimonial.review}</p>
                   </div>
 
                   <div className="h-[2px] bg-base-content/20 my-4"></div>
@@ -65,7 +65,7 @@ const TestimonialsSection = () => {
                       className="h-8 w-8 rounded-full overflow-hidden object-cover border-3 border-primary"
                     />
                     <div>
-                      <p className="font-semibold">{testimonial.name}</p>
+                      <p className="font-semibold text-base-content">{testimonial.name}</p>
                       <p className="text-base-content/60 text-xs">{testimonial.role}</p>
                     </div>
                   </div>

@@ -10,7 +10,7 @@ import TestimonialsSection from "./components/TestimonialsSection";
 const App = () => {
 
   return (
-    <div>
+    <div className="bg-base-100 text-base-content">
       <Navbar />
       <HomeSection />
       <AboutSection />

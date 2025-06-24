@@ -30,7 +30,7 @@ const ServiceSection = () => {
 
             <div className="h-[2px] bg-base-content/20 my-4"></div>
 
-            <h1 className="font-semibold text-lg">{service.title}</h1>
+            <h1 className="font-semibold text-lg text-base-content">{service.title}</h1>
             <p className="text-base-content/60 text-xs">{service.description}</p>
           </div>
         ))}

@@ -99,7 +99,7 @@ const Navbar = () => {
             onClick={() => setIsMenuOpen((prev) => !prev)}
             className='md:hidden z-60 cursor-pointer'
           >
-            {isMenuOpen ? <X className='text-white' /> : <Menu />}
+            {isMenuOpen ? <X className='text-white' /> : <Menu className='text-base-content' />}
           </div>
 
           <div
