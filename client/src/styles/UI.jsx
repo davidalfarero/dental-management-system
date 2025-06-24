@@ -1,5 +1,7 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export const Button = ({
   children,
@@ -95,3 +97,13 @@ export const MessageField = ({ ...props }) => (
     />
   </div>
 );
+
+export const ScrollTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
