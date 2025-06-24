@@ -3,9 +3,11 @@ import { Button } from '../styles/UI';
 import { Menu, Moon, Sun, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NavLinks from './NavLinks';
+import MobileNavLinks from './MobileNavLinks';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const [scrolled, setScrolled] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
@@ -40,7 +42,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full h-15 md:h-20 flex items-center z-50
+      <nav className={`fixed top-0 w-full h-15 md:h-20 flex items-center z-50 border-b border-base-300
       ${scrolled
           ? 'bg-base-100/60 backdrop-blur-md shadow-sm'
           : 'bg-base-100'}
@@ -81,35 +83,16 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile navlinks */}
-      {/* <div
+      {/* Mobile menu button */}
+      <div
         onClick={() => setIsMenuOpen((prev) => !prev)}
         className='md:hidden cursor-pointer fixed top-5 right-5 z-60'
       >
-        {isMenuOpen ? <X className='text-white' /> : <Menu className='text-base-content' />}
+        {isMenuOpen ? <X className='text-neutral-100' /> : <Menu className='text-base-content' />}
       </div>
 
-      <div
-        className={`md:hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 transition-opacity
-          ${isMenuOpen ?
-            'opacity-100 pointer-events-auto' :
-            'opacity-0 pointer-events-none'
-          }
-          `}
-      >
-        <div className='flex flex-col gap-8'>
-          {navlinks.map(({ name, href }, index) => (
-            <a
-              key={index}
-              href={href}
-              onClick={() => setIsMenuOpen(false)}
-              className='text-center text-white font-semibold text-xl'
-            >
-              {name}
-            </a>
-          ))}
-        </div>
-      </div> */}
+      {/* Mobile navlinks */}
+      <MobileNavLinks isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </>
   );
 };

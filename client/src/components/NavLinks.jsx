@@ -20,8 +20,8 @@ const NavLinks = () => {
           <Link
             to={link}
             key={index}
-            className={`cursor-pointer font-semibold text-sm hover:text-primary transition-colors border-b-3 border-base-100
-              ${isActive && 'border-primary'}
+            className={`cursor-pointer font-semibold text-sm hover:text-primary transition-colors 
+              ${isActive && 'border-b-3 border-primary'}
               `}
           >
             {name}
