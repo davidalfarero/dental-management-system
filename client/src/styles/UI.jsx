@@ -67,7 +67,7 @@ export const InputField = ({ icon: Icon, ...props }) => (
     </div>
     <input
       {...props}
-      className='rounded-lg px-3 py-2 pl-10 w-full border border-base-content/20 placeholder:base-content/60
+      className='rounded-lg px-3 py-2 pl-10 w-full border border-base-content/20 placeholder:base-content/80
       focus:border-primary focus:outline-none'
     />
   </div>
@@ -77,7 +77,7 @@ export const MessageField = ({ ...props }) => (
   <div className="mb-4">
     <textarea
       {...props}
-      className='rounded-lg px-3 py-2 w-full border border-base-content/20 placeholder:base-content/60
+      className='rounded-lg px-3 py-2 w-full border border-base-content/20 placeholder:base-content/80
       focus:border-primary focus:outline-none resize-none'
     />
   </div>
