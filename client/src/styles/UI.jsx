@@ -1,17 +1,30 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Button = ({
   children,
+  to,
   className = "",
-  ...props }) => (
-  <button
-    {...props}
-    className={`rounded-full shadow-lg text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease
-      ${className}`}
-  >
-    {children}
-  </button>
-);
+  ...props
+}) => {
+  const baseClass = `w-fit rounded-full bg-primary shadow-lg text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease ${className}`;
+
+  // If 'to' is provided, render as <Link>
+  if (to) {
+    return (
+      <Link to={to} className={baseClass} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
+  // Else, render as <button>
+  return (
+    <button className={baseClass} {...props}>
+      {children}
+    </button>
+  );
+};
 
 export const Tooltip = ({ children, text, position = "" }) => {
   const positionClasses = {

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../styles/UI';
 import { Menu, Moon, Sun, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import NavLinks from './NavLinks';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,14 +10,6 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
-
-  const navlinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Our Services', href: '#services' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Location', href: '#location' },
-    { name: 'Contact Us', href: '#contact' }
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,27 +52,18 @@ const Navbar = () => {
           <div className='flex-1 md:flex-none'>
 
             {/* logo */}
-            <a href='#home' className="text-lg flex items-center gap-2">
+            <Link to='/' className="text-lg flex items-center gap-2">
               <div className="avatar">
                 <div className="w-10 rounded-full">
                   <img src="/dental-logo.png" alt="Logo" />
                 </div>
               </div>
               <span className='text-sm md:text-xl text-primary font-black'>Dental Clinic</span>
-            </a>
+            </Link>
           </div>
 
-          <div className="hidden md:block space-x-4">
-            {navlinks.map(({ name, href }, index) => (
-              <a
-                key={index}
-                href={href}
-                className='cursor-pointer font-semibold text-sm
-            hover:text-primary hover:border-b-3 transition-colors'
-              >
-                {name}
-              </a>
-            ))}
+          <div className='hidden md:flex items-center space-x-4'>
+            <NavLinks />
           </div>
 
           {/* Theme toggle */}
@@ -90,14 +75,14 @@ const Navbar = () => {
           </div>
 
           {/* Todo: Book online function */}
-          <Button className='bg-primary'>
+          <Button to='/contact'>
             Book Online
           </Button>
         </div>
       </nav>
 
       {/* Mobile navlinks */}
-      <div
+      {/* <div
         onClick={() => setIsMenuOpen((prev) => !prev)}
         className='md:hidden cursor-pointer fixed top-5 right-5 z-60'
       >
@@ -124,7 +109,7 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

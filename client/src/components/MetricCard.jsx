@@ -9,7 +9,7 @@ const MetricCard = () => {
   ];
 
   return (
-    <div className="max-w-3xl mx-4 md:mx-auto flex text-center justify-center p-4 mt-8 rounded-2xl bg-base-100/50 shadow-lg backdrop-blur-xs">
+    <div className="max-w-3xl md:mx-auto flex text-center justify-center p-4 md:px-4 md:py-8 rounded-2xl bg-base-100/50 shadow-lg backdrop-blur-xs">
 
       {metrics.map((metric, index) => (
         <React.Fragment key={index}>

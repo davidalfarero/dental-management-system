@@ -1,12 +1,12 @@
 import MetricCard from "./MetricCard";
 
-const HomeSection = () => {
+const HeroSection = () => {
   const metrics = [
     {}
   ];
 
   return (
-    <main id="home" className="relative h-[calc(100vh-3.75rem)] md:h-[calc(100vh-5rem)] pt-15 md:pt-20 mb-15">
+    <main className="relative h-[calc(100vh-3.75rem)] md:h-[calc(100vh-5rem)] mt-15 md:mt-20">
       <div className="absolute w-full h-full opacity-60">
         <img
           src="/dental-cover-photo.jpg"
@@ -14,7 +14,7 @@ const HomeSection = () => {
         />
       </div>
 
-      <div className="relative max-w-5xl mx-auto z-10">
+      <div className="relative max-w-5xl h-full mx-auto z-10">
 
         <div className="absolute top-5 right-5 flex flex-col items-center -rotate-4"
         >
@@ -32,22 +32,23 @@ const HomeSection = () => {
         </div>
 
 
-        <div className="p-6 max-w-[250px] md:max-w-3xl leading-20">
-          <h1 className="text-2xl sm:text-3xl md:text-[75px]">
-            Fast Track to a <span className="text-primary font-black">Beautiful</span>,
+        <div className="absolute top-[10%] md:top-5 left-5 max-w-[180px] md:max-w-lg ">
+          <h1 className="text-[32px] md:text-5xl leading-8 md:leading-16">
+            Fast Track to a <span className="text-primary font-black">Beautiful</span>, Aligned <span className="text-primary font-black">Smile</span>.
           </h1>
-          <h1 className="text-2xl sm:text-3xl md:text-[75px]">Aligned <span className="text-primary font-black">Smile</span>.</h1>
         </div>
 
-        <div className="ml-5 md:ml-20 p-4 max-w-[180px] md:max-w-sm rounded-xl bg-base-100/50 shadow-lg backdrop-blur-xs">
+        <div className="absolute left-5 bottom-[30%] p-3 max-w-[180px] md:max-w-sm rounded-xl bg-base-100/50 shadow-lg backdrop-blur-xs">
           <p className="text-base-content/80 text-xs md:text-base">Experience compassionate dental care with the latest technology tailored to your comfort. From routine cleanings to advanced treatments, we make every visit stress-free and smile-worthy.</p>
         </div>
 
-        <MetricCard />
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2">
+          <MetricCard />
+        </div>
 
       </div>
 
     </main>
   );
 };
-export default HomeSection;
+export default HeroSection;

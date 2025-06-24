@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
-import { SectionTitle } from '../styles/UI';
+import { ArrowRight, HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
+import { Button, SectionTitle } from '../styles/UI';
 
 const aboutInfo = [
   {
@@ -28,7 +28,7 @@ const AboutSection = () => {
   const selectedAbout = aboutInfo[selectedIndex];
 
   return (
-    <section id="about" className="max-w-5xl mx-auto pt-15 md:pt-20">
+    <section className="max-w-5xl mx-auto pt-15 md:pt-20">
       <p className="text-sm text-primary text-center font-semibold mb-5">Why Choose Us?</p>
 
       <SectionTitle
@@ -41,7 +41,7 @@ const AboutSection = () => {
       />
 
 
-      <div className="grid md:grid-cols-2 gap-6 p-4 items-center">
+      <div className="grid md:grid-cols-2 gap-6 p-4 items-center mb-5">
 
         <div className="grid grid-cols-3 md:grid-cols-1 gap-2">
           {aboutInfo.map((about, index) => (
@@ -75,8 +75,18 @@ const AboutSection = () => {
             className="rounded-xl shadow-md w-full h-auto object-cover max-h-[400px] mx-auto"
           />
         </div>
-
       </div>
+
+      <Button
+        className="mx-auto mb-5 flex items-center gap-2"
+        aria-label="Learn More"
+        to='/about'
+      >
+        Learn More About Us
+        <div className="rounded-full bg-neutral-100 p-1 text-primary">
+          <ArrowRight size={20} />
+        </div>
+      </Button>
 
     </section >
   );

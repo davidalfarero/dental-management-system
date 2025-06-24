@@ -1,23 +1,23 @@
-import AboutSection from "./components/AboutSection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
-import HomeSection from "./components/HomeSection";
-import LocationSection from "./components/LocationSection";
-import Navbar from "./components/Navbar";
-import ServiceSection from "./components/ServiceSection";
-import TestimonialsSection from "./components/TestimonialsSection";
+
+import { Routes, Route } from 'react-router-dom';
+import HomePage from "./pages/HomePage";
+import ServicesPage from './pages/ServicesPage';
+import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
 
   return (
-    <div className="bg-base-100 text-base-content">
+    <div>
       <Navbar />
-      <HomeSection />
-      <AboutSection />
-      <ServiceSection />
-      <TestimonialsSection />
-      <LocationSection />
-      <ContactSection />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/about' element={<AboutPage />} />
+        <Route path='/services' element={<ServicesPage />} />
+        <Route path='/contact' element={<ContactPage />} />
+      </Routes>
       <Footer />
     </div>
   );

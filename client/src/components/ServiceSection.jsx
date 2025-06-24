@@ -2,9 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { services } from "../data/services";
 import { Button, SectionTitle } from "../styles/UI";
 
-const ServiceSection = () => {
+const ServicesSection = () => {
   return (
-    <section id="services" className="max-w-5xl mx-auto pt-15 md:pt-20">
+    <section className="max-w-5xl mx-auto pt-15 md:pt-20">
       <p className="text-sm text-primary text-center font-semibold mb-5">Our Services</p>
 
       <SectionTitle
@@ -38,10 +38,11 @@ const ServiceSection = () => {
 
       {/* todo: create page for complete lists of services */}
       <Button
-        className="mx-auto mb-5 flex items-center gap-2 bg-primary"
-        aria-label="See all services"
+        className="mx-auto mb-5 flex items-center gap-2"
+        aria-label="View All Dental Services"
+        to='/services'
       >
-        See All
+        View All Dental Services
         <div className="rounded-full bg-neutral-100 p-1 text-primary">
           <ArrowRight size={20} />
         </div>
@@ -50,4 +51,4 @@ const ServiceSection = () => {
     </section>
   );
 };
-export default ServiceSection;
+export default ServicesSection;

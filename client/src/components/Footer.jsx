@@ -84,9 +84,7 @@ const Footer = () => {
         <p className="text-base-content/60 text-sm font-semibold">@ 2025 Dental Clinic. All Rights Reserved.</p>
 
         <div className="cursor-pointer p-2 rounded-xl hover:bg-base-200 transition-colors">
-          <Tooltip text='Home' position="top">
-            <a href="#home"><SquareChevronUp className="size-5 text-primary" /></a>
-          </Tooltip>
+          <a href="#"><SquareChevronUp className="size-5 text-primary" /></a>
         </div>
 
         <div className="flex gap-4">
