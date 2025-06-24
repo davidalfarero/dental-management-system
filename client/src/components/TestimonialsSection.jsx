@@ -14,7 +14,7 @@ const TestimonialsSection = () => {
   }, []);
 
   return (
-    <section id="testimonials" className="pt:15 md:pt-20 pb-10 px-5 bg-primary/10">
+    <section id="testimonials" className="pt-15 md:pt-20 pb-10 px-5 bg-primary/10">
       <div className="max-w-5xl mx-auto">
         <p className="text-sm text-primary text-center font-semibold mb-5">Testimonials</p>
 

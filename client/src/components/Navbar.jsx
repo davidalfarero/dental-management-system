@@ -53,7 +53,7 @@ const Navbar = () => {
       }
       `}
       >
-        <div className='max-w-5xl mx-auto w-full flex items-center justify-between gap-4 px-4'>
+        <div className='max-w-5xl mx-auto w-full flex items-center justify-between gap-4 px-4 pr-15 md:pr-4'>
 
           <div className='flex-1 md:flex-none'>
 
@@ -93,39 +93,38 @@ const Navbar = () => {
           <Button className='bg-primary'>
             Book Online
           </Button>
-
-          {/* Mobile navlinks */}
-          <div
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className='md:hidden z-60 cursor-pointer'
-          >
-            {isMenuOpen ? <X className='text-white' /> : <Menu className='text-base-content' />}
-          </div>
-
-          <div
-            className={`md:hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50 transition-opacity
-          ${isMenuOpen ?
-                'opacity-100 pointer-events-auto' :
-                'opacity-0 pointer-events-none'
-              }
-          `}
-          >
-            <div className='flex flex-col gap-8'>
-              {navlinks.map(({ name, href }, index) => (
-                <a
-                  key={index}
-                  href={href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className='text-center text-white font-semibold text-xl'
-                >
-                  {name}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
-
       </nav>
+
+      {/* Mobile navlinks */}
+      <div
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+        className='md:hidden cursor-pointer fixed top-5 right-5 z-60'
+      >
+        {isMenuOpen ? <X className='text-white' /> : <Menu className='text-base-content' />}
+      </div>
+
+      <div
+        className={`md:hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 transition-opacity
+          ${isMenuOpen ?
+            'opacity-100 pointer-events-auto' :
+            'opacity-0 pointer-events-none'
+          }
+          `}
+      >
+        <div className='flex flex-col gap-8'>
+          {navlinks.map(({ name, href }, index) => (
+            <a
+              key={index}
+              href={href}
+              onClick={() => setIsMenuOpen(false)}
+              className='text-center text-white font-semibold text-xl'
+            >
+              {name}
+            </a>
+          ))}
+        </div>
+      </div>
     </>
   );
 };

@@ -28,7 +28,7 @@ const AboutSection = () => {
   const selectedAbout = aboutInfo[selectedIndex];
 
   return (
-    <section id="about" className="max-w-5xl mx-auto pt:15 md:pt-20">
+    <section id="about" className="max-w-5xl mx-auto pt-15 md:pt-20">
       <p className="text-sm text-primary text-center font-semibold mb-5">Why Choose Us?</p>
 
       <SectionTitle

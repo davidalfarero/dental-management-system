@@ -63,7 +63,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="max-w-5xl mx-auto pt:15 md:pt-20">
+    <section id="contact" className="max-w-5xl mx-auto pt-15 md:pt-20">
       <p className="text-sm text-primary text-center font-semibold mb-5">Get in Touch with Us</p>
       <SectionTitle
         title={
