@@ -36,7 +36,7 @@ const ContactSection = () => {
     };
 
     try {
-      const res = await fetch("http://localhost:5001/api/send-booking", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/send-booking`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
