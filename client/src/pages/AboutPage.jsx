@@ -54,7 +54,7 @@ const AboutPage = () => {
           {selectedAbout.dentists.map((dentist, index) => (
             <div
               key={index}
-              className="grid md:grid-cols-[70%_30%] gap-4 items-center"
+              className="grid md:grid-cols-[75%_25%] gap-4 items-center"
             >
               <div>
                 <h3 className="text-xl font-bold">{dentist.name}</h3>
