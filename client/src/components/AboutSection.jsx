@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ArrowRight, HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
 import { Button, SectionTitle } from '../styles/UI';
 
-const aboutInfo = [
+export const details = [
   {
     title: "Experienced Team",
     content: "Our dentists and staff are highly skilled with years of experience in delivering exceptional dental care. You’re in good hands from the moment you walk in.",
@@ -25,7 +25,7 @@ const aboutInfo = [
 
 const AboutSection = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const selectedAbout = aboutInfo[selectedIndex];
+  const selectedAbout = details[selectedIndex];
 
   return (
     <section className="max-w-5xl mx-auto pt-15 md:pt-20">
@@ -44,7 +44,7 @@ const AboutSection = () => {
       <div className="grid md:grid-cols-2 gap-6 p-4 items-center mb-5">
 
         <div className="grid grid-cols-3 md:grid-cols-1 gap-2">
-          {aboutInfo.map((about, index) => (
+          {details.map((detail, index) => (
             <div
               key={index}
               onClick={() => setSelectedIndex(index)}
@@ -57,12 +57,12 @@ const AboutSection = () => {
                 className='size-10 md:w-20 md:h-10 rounded-full flex items-center justify-center
                 transition duration-300 border border-primary'
               >
-                {about.icon}
+                {detail.icon}
               </div>
 
               <div>
-                <h3 className="text-xs md:text-md text-center font-semibold text-primary">{about.title}</h3>
-                <p className="hidden md:block text-xs text-base-content/70">{about.content}</p>
+                <h3 className="text-xs md:text-md text-center font-semibold text-primary">{detail.title}</h3>
+                <p className="hidden md:block text-xs text-base-content/70">{detail.content}</p>
               </div>
             </div>
           ))}
@@ -80,7 +80,7 @@ const AboutSection = () => {
       <Button
         className="mx-auto mb-5 flex items-center gap-2"
         aria-label="Learn More"
-        to='/about'
+        href='/about'
       >
         Learn More About Us
         <div className="rounded-full bg-neutral-100 p-1 text-primary">

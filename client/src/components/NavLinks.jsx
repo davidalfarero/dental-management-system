@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const NavLinks = () => {
   const location = useLocation();
@@ -17,15 +17,15 @@ const NavLinks = () => {
         const isActive = currentPath === link;
 
         return (
-          <Link
-            to={link}
+          <a
+            href={link}
             key={index}
             className={`cursor-pointer font-semibold text-sm hover:text-primary transition-colors 
               ${isActive && 'border-b-3 border-primary'}
               `}
           >
             {name}
-          </Link>
+          </a>
         );
       })}
     </>

@@ -40,7 +40,7 @@ const ServicesSection = () => {
       <Button
         className="mx-auto mb-5 flex items-center gap-2"
         aria-label="View All Dental Services"
-        to='/services'
+        href='/services'
       >
         View All Dental Services
         <div className="rounded-full bg-neutral-100 p-1 text-primary">

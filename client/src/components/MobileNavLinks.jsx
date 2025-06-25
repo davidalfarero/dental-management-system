@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 
 const MobileNavLinks = ({ isMenuOpen, setIsMenuOpen }) => {
 
@@ -21,14 +20,14 @@ const MobileNavLinks = ({ isMenuOpen, setIsMenuOpen }) => {
     >
       <div className='flex flex-col gap-8'>
         {pages.map(({ name, link }, index) => (
-          <Link
+          <a
             key={index}
-            to={link}
+            href={link}
             onClick={() => setIsMenuOpen(false)}
             className='text-center text-neutral-100 font-semibold text-xl'
           >
             {name}
-          </Link>
+          </a>
         ))}
       </div>
     </div>
