@@ -78,7 +78,7 @@ const AboutSection = () => {
       </div>
 
       <Button
-        className="mx-auto mb-5 flex items-center gap-2"
+        className="w-fit mx-auto mb-5 flex items-center gap-2"
         aria-label="Learn More"
         href='/about'
       >

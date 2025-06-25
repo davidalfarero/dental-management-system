@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../styles/UI';
-import { Menu, Moon, Sun, X } from 'lucide-react';
+import { CalendarCheck, Menu, Moon, Sun, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import NavLinks from './NavLinks';
 import MobileNavLinks from './MobileNavLinks';
@@ -77,8 +77,8 @@ const Navbar = () => {
           </div>
 
           {/* Todo: Book online function */}
-          <Button to='/contact'>
-            Book Online
+          <Button to='/contact' aria-label='Book Now'>
+            Book Now
           </Button>
         </div>
       </nav>

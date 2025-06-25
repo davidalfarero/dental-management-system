@@ -92,7 +92,6 @@ const Footer = () => {
           <p className="text-base-content/60 text-xs">Privacy Policy</p>
         </div>
       </div>
-
     </footer>
   );
 };

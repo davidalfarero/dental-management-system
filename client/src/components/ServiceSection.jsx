@@ -38,7 +38,7 @@ const ServicesSection = () => {
 
       {/* todo: create page for complete lists of services */}
       <Button
-        className="mx-auto mb-5 flex items-center gap-2"
+        className="w-fit mx-auto mb-5 flex items-center gap-2"
         aria-label="View All Dental Services"
         href='/services'
       >
