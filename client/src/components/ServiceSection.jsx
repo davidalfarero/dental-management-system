@@ -20,7 +20,7 @@ const ServicesSection = () => {
         {services.map((service, index) => (
           <div
             key={index}
-            className={`rounded-2xl bg-base-300 overflow-hidden px-2 pt-2 pb-4 space-y-2
+            className={`max-w-[450px] rounded-2xl bg-base-300 overflow-hidden px-2 pt-2 pb-4 space-y-2 place-self-center
               ${index >= 3 ? 'hidden md:block' : ''}
               `}
           >

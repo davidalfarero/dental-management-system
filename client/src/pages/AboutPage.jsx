@@ -25,16 +25,16 @@ const AboutPage = () => {
           return (
             <div
               key={about.id}
-              className={`rounded-xl shadow-md p-4 cursor-pointer border border-base-content/20
+              className={`rounded-xl shadow-md p-4 cursor-pointer
               flex items-center gap-2 
-              ${about.id === selectedIndex ? 'bg-primary/20 border-primary/50' : 'bg-base-100'}
+              ${about.id === selectedIndex ? 'bg-primary/20' : 'bg-base-200'}
               `}
               onClick={() => setSelectedIndex(about.id)}
             >
 
               <div className={`rounded-full flex items-center justify-center
-                transition duration-300 text-primary size-10
-                ${about.id === selectedIndex && 'bg-neutral-200'}
+                transition duration-300 size-10 text-primary
+                ${about.id === selectedIndex ? 'bg-neutral-100' : 'bg-primary/20'}
                 `}
               >
                 <Icon />
@@ -51,36 +51,39 @@ const AboutPage = () => {
 
       {selectedAbout?.id === "dentist" ? (
         <div className="space-y-6 px-4 md:px-0">
-          {selectedAbout.dentists.map((dentist, index) => (
-            <div
-              key={index}
-              className="grid md:grid-cols-[75%_25%] gap-4 items-center"
-            >
-              <div>
-                <h3 className="text-xl font-bold">{dentist.name}</h3>
-                <p className="text-sm text-base-content/80 font-semibold">{dentist.title}</p>
-                {dentist.description.split('\n\n').map((para, i) => (
-                  <p key={i} className="mt-2 text-base-content/70 text-sm">{para}</p>
-                ))}
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
-                viewport={{ once: true }}
-                className="rounded-xl w-full h-80 overflow-hidden"
+          {selectedAbout.dentists.map((dentist, index) => {
+            const isReversed = index % 2 !== 0;
+            return (
+              <div
+                key={index}
+                className={`grid gap-4 items-center
+                  ${isReversed ? 'md:grid-cols-[25%_75%]' : 'md:grid-cols-[75%_25%]'}
+                  `}
               >
-                <img
-                  src={`/${dentist.image}`}
-                  alt={dentist.name}
-                  className="w-full h-full object-fit rounded-2xl"
-                />
-              </motion.div>
+                <div className={`order-1 ${isReversed ? "md:order-2" : "md:order-1"}`}>
+                  <h3 className="text-xl font-bold">{dentist.name}</h3>
+                  <p className="text-sm text-base-content/80 font-semibold">{dentist.title}</p>
+                  {dentist.description.split('\n\n').map((para, i) => (
+                    <p key={i} className="mt-2 text-base-content/70 text-sm">{para}</p>
+                  ))}
+                </div>
 
-
-            </div>
-          ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  viewport={{ once: true }}
+                  className={`order-2 ${isReversed ? "md:order-1" : "md:order-2"} w-full h-80 overflow-hidden`}
+                >
+                  <img
+                    src={`/${dentist.image}`}
+                    alt={dentist.name}
+                    className="w-full h-full object-fit"
+                  />
+                </motion.div>
+              </div>
+            );
+          })}
         </div>
       ) : (
         <div className="grid md:grid-cols-2 gap-4 items-center px-4 md:px-0">
@@ -89,13 +92,13 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="rounded-xl w-full h-80 overflow-hidden"
+            className="w-full h-80 overflow-hidden"
           >
 
             <img
               src={`/${selectedAbout.image}`}
               alt={selectedAbout.title}
-              className="w-full h-full object-fit rounded-2xl"
+              className="w-full h-full object-fit"
             />
           </motion.div>
           <div>
