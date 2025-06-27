@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { Button } from '../styles/UI';
-import { CalendarCheck, Menu, Moon, Sun, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import NavLinks from './NavLinks';
 import MobileNavLinks from './MobileNavLinks';
+import NavLinks from './NavLinks';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,14 +53,14 @@ const Navbar = () => {
           <div className='flex-1 md:flex-none'>
 
             {/* logo */}
-            <Link to='/' className="text-lg flex items-center gap-2">
+            <a href='/' className="text-lg flex items-center gap-2">
               <div className="avatar">
                 <div className="w-10 rounded-full">
                   <img src="/dental-logo.png" alt="Logo" />
                 </div>
               </div>
               <span className='text-sm md:text-xl text-primary font-black'>Dental Clinic</span>
-            </Link>
+            </a>
           </div>
 
           <div className='hidden md:flex items-center space-x-4'>
