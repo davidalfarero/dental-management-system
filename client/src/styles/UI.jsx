@@ -46,7 +46,7 @@ export const SectionTitle = ({ title, subtitle }) => (
 );
 
 export const SwiperNavButtons = ({ prevRef, nextRef }) => (
-  <div className="flex justify-center gap-4 mt-6">
+  <div className="flex justify-center gap-4 my-4">
     <button
       ref={prevRef}
       className="w-10 h-10 flex items-center justify-center rounded-full bg-neutral-100 border border-neutral-300 text-gray-600 hover:bg-gray-100 transition"
