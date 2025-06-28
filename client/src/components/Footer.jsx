@@ -17,25 +17,17 @@ const Footer = () => {
             <span className='text-sm text-primary font-black'>Dental Clinic</span>
           </a>
 
-          <p className="text-base-content/60 text-xs">Our mission is to provide compassionate, high-quality dental care in a comfortable environment</p>
+          <p className="text-base-content/60 text-xs max-w-xs">Our mission is to provide compassionate, high-quality dental care in a comfortable environment</p>
         </div>
 
 
         <div>
           <p className="font-semibold mb-4 text-sm">Quick Links</p>
           <ul className="text-base-content/60 text-xs">
-            <li className="mb-2"><a href="#" className="hover:underline">Home</a></li>
-            <li className="mb-2"><a href="#services" className="hover:underline">Our Services</a></li>
-            <li className="mb-2"><a href="#" className="hover:underline">Pricing and Plans</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p className="font-semibold mb-4 text-sm">Company</p>
-          <ul className="text-base-content/60 text-xs">
-            <li className="mb-2"><a href="#about" className="hover:underline">About Us</a></li>
-            <li className="mb-2"><a href="#" className="hover:underline">Our Vision</a></li>
-            <li className="mb-2"><a href="#" className="hover:underline">Testimonials</a></li>
+            <li className="mb-2"><a href="/" className="hover:underline">Home</a></li>
+            <li className="mb-2"><a href="/about" className="hover:underline">About Us</a></li>
+            <li className="mb-2"><a href="/services" className="hover:underline">Our Services</a></li>
+            <li className="mb-2"><a href="/contact" className="hover:underline">Contact US</a></li>
           </ul>
         </div>
 
