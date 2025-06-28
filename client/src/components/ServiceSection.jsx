@@ -24,8 +24,12 @@ const ServicesSection = () => {
               ${index >= 3 ? 'hidden md:block' : ''}
               `}
           >
-            <div className="max-h-[250px] rounded-2xl overflow-hidden">
-              <img src={service.image} alt={service.title} className="w-full h-full object-cover" />
+            <div className="max-h-[300px] rounded-2xl overflow-hidden">
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-full object-cover"
+              />
             </div>
 
             <div className="h-[2px] bg-base-content/20 my-4"></div>
