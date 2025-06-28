@@ -57,7 +57,7 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        <div className="absolute left-5 bottom-[30%] p-3 max-w-[150px] md:max-w-sm rounded-xl bg-base-100/50 shadow-lg backdrop-blur-xs">
+        <div className="absolute left-5 bottom-[30%] p-3 max-w-[170px] md:max-w-sm rounded-xl bg-base-100/50 shadow-lg backdrop-blur-xs">
           <p className="text-base-content/80 text-xs md:text-base">Experience compassionate dental care with the latest technology tailored to your comfort. From routine cleanings to advanced treatments, we make every visit stress-free and smile-worthy.</p>
         </div>
 
