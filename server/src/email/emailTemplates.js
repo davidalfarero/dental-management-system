@@ -1,7 +1,7 @@
 export const sendInquiryEmail = (name, email, phone, message) => `
 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; margin: auto;">
     <div style="text-align: center; margin-bottom: 20px;">
-      <img src="https://via.placeholder.com/150x50?text=Clinic+Logo" alt="Logo" style="max-width: 150px; height: auto;" />
+      <img src="https://dummyimage.com/150x50/0d6efd/ffffff&text=Dental+Clinic" alt="Logo" style="max-width: 150px; height: auto;" />
     </div>
 
     <h2 style="color: #0D6EFD; border-bottom: 1px solid #ccc; padding-bottom: 8px;">📬 New Patient Inquiry</h2>
@@ -32,7 +32,7 @@ export const sendInquiryEmail = (name, email, phone, message) => `
 export const sendPatientConfirmationEmail = (name) => `
 <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; max-width: 600px; margin: auto;">
   <div style="text-align: center; margin-bottom: 20px;">
-    <img src="https://via.placeholder.com/150x50?text=Clinic+Logo" alt="Clinic Logo" style="max-width: 150px; height: auto;" />
+    <img src="https://dummyimage.com/150x50/0d6efd/ffffff&text=Dental+Clinic" alt="Clinic Logo" style="max-width: 150px; height: auto;" />
   </div>
 
   <h2 style="color: #0D6EFD; border-bottom: 1px solid #ccc; padding-bottom: 8px;">🦷 Booking Inquiry Received</h2>
