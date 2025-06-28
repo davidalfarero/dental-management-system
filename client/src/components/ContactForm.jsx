@@ -23,7 +23,7 @@ const ContactForm = () => {
     if (!name || !email || !phone || !message) {
       setIsLoading(false);
       setStatus("error");
-      setErrorMessage("All fields are required.");
+      setErrorMessage("Missing required fields");
       setTimeout(() => setStatus(null), 5000);
       return;
     }

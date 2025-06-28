@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
+import { sendInquiryEmail, sendPatientConfirmationEmail } from './email/emailTemplates.js';
+
 
 dotenv.config();
 
@@ -19,27 +21,32 @@ app.post('/api/send-booking', async (req, res) => {
 
   const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
+  const adminHtml = sendInquiryEmail(name, email, phone, message);
+  const patientHtml = sendPatientConfirmationEmail(name);
+
   const sendSmtpEmail = {
     to: [{ email: process.env.CLINIC_EMAIL, name: "Clinic Admin" }],
     sender: { email: process.env.CLINIC_EMAIL, name: "Dental Booking" },
     subject: "🦷 New Booking Request",
-    htmlContent: `
-      <h2>New Booking from ${name}</h2>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Message:</strong></p>
-      <p>${message}</p>
-    `,
+    htmlContent: adminHtml,
   };
 
+  const patientEmail = {
+    to: [{ email, name }],
+    sender: { email: process.env.CLINIC_EMAIL, name: "Dental Clinic" },
+    subject: "🦷 We've Received Your Booking Request",
+    htmlContent: patientHtml,
+  };
   try {
-    await apiInstance.sendTransacEmail(sendSmtpEmail);
+    await Promise.all([
+      apiInstance.sendTransacEmail(sendSmtpEmail),
+      apiInstance.sendTransacEmail(patientEmail),
+    ]);
     res.status(200).json({ success: true });
   } catch (error) {
-    console.error("Brevo Error:", error);
+    console.error("Brevo Error:", error.response?.body || error.message);
     res.status(500).json({ success: false, error: "Failed to send email." });
   }
-
 });
 
 const PORT = process.env.PORT || 5001;
