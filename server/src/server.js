@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import SibApiV3Sdk from 'sib-api-v3-sdk';
 import { sendInquiryEmail, sendPatientConfirmationEmail } from './email/emailTemplates.js';
 
-
 dotenv.config();
 
 const app = express();
@@ -13,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/api/send-booking', async (req, res) => {
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, subject, schedule, message } = req.body;
 
   const client = SibApiV3Sdk.ApiClient.instance;
   const apiKey = client.authentications['api-key'];
@@ -21,20 +20,20 @@ app.post('/api/send-booking', async (req, res) => {
 
   const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
 
-  const adminHtml = sendInquiryEmail(name, email, phone, message);
-  const patientHtml = sendPatientConfirmationEmail(name);
+  const adminHtml = sendInquiryEmail(name, email, phone, subject, schedule, message);
+  const patientHtml = sendPatientConfirmationEmail(name, subject, schedule);
 
   const sendSmtpEmail = {
     to: [{ email: process.env.CLINIC_EMAIL, name: "Clinic Admin" }],
     sender: { email: process.env.CLINIC_EMAIL, name: "Dental Booking" },
-    subject: "🦷 New Booking Request",
+    subject: "📬 New Patient Inquiry Received",
     htmlContent: adminHtml,
   };
 
   const patientEmail = {
     to: [{ email, name }],
     sender: { email: process.env.CLINIC_EMAIL, name: "Dental Clinic" },
-    subject: "🦷 We've Received Your Booking Request",
+    subject: "🦷 We've Received Your Inquiry",
     htmlContent: patientHtml,
   };
   try {

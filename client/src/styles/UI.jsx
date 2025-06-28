@@ -1,5 +1,7 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarDays, List } from "lucide-react";
 import { useEffect } from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import { useLocation } from 'react-router-dom';
 
 export const Button = ({
@@ -65,14 +67,50 @@ export const SwiperNavButtons = ({ prevRef, nextRef }) => (
 );
 
 export const InputField = ({ icon: Icon, ...props }) => (
-  <div className="relative mb-4 text-neutral-900">
+  <div className="relative mb-2 text-neutral-900">
     <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-      <Icon className='size-5 text-primary/50' />
+      <Icon className='size-5 text-primary/80' />
     </div>
     <input
       {...props}
-      className='rounded-lg px-3 py-2 pl-10 w-full bg-neutral-100 border border-base-content/20 placeholder-neutral-400
+      className='rounded-lg w-full px-3 py-2 pl-10 bg-neutral-100 border border-base-content/20 placeholder-neutral-400
       focus:border-primary focus:outline-none'
+    />
+  </div>
+);
+
+export const SubjectPicker = ({ ...props }) => (
+  <div className="relative mb-2">
+    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+      <List className='size-5 text-primary/80' />
+    </div>
+    <select
+      {...props}
+      className='rounded-lg w-[170px] text-neutral-600 px-3 py-2 pl-10 bg-neutral-100 border border-base-content/20
+      focus:border-primary focus:outline-none'
+    >
+      <option value="" disabled>Select a subject</option>
+      <option value="General Inquiry">General Inquiry</option>
+      <option value="Appointment Booking">Appointment</option>
+      <option value="Others">Others</option>
+    </select>
+  </div>
+);
+
+export const SchedulePicker = ({ ...props }) => (
+  <div className="flex items-center gap-2 mb-2">
+    <CalendarDays className="text-primary/80 pointer-events-none h-5 w-5" />
+    <DatePicker
+      {...props}
+      minDate={new Date()}
+      showTimeSelect
+      shouldCloseOnSelect
+      filterDate={(date) => date.getDay() !== 0} // 0 = Sunday
+      timeFormat="hh:mm aa"
+      timeIntervals={30}
+      dateFormat="MM/dd/yyyy h:mm aa"
+      placeholderText="Time and Date"
+      className="w-[120px] text-base-content placeholder-neutral-400 rounded-lg px-3 py-2 bg-neutral-100 border border-base-content/20 focus:border-primary focus:outline-none cursor-pointer"
     />
   </div>
 );

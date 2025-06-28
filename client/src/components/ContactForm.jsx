@@ -1,17 +1,17 @@
 import { LoaderCircle, Mail, Phone, User } from "lucide-react";
 import { useState } from 'react';
-import { InputField, MessageField } from "../styles/UI";
+import "react-datepicker/dist/react-datepicker.css";
+import { InputField, MessageField, SchedulePicker, SubjectPicker } from "../styles/UI";
 
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [subject, setSubject] = useState('');
+  const [schedule, setSchedule] = useState(null);
   const [message, setMessage] = useState('');
-
   const [isLoading, setIsLoading] = useState(false);
-
   const [status, setStatus] = useState(null);
-
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -20,7 +20,7 @@ const ContactForm = () => {
     setStatus(null);
     setErrorMessage('');
 
-    if (!name || !email || !phone || !message) {
+    if (!name || !email || !phone || !subject || !schedule || !message) {
       setIsLoading(false);
       setStatus("error");
       setErrorMessage("Missing required fields");
@@ -32,6 +32,8 @@ const ContactForm = () => {
       name,
       email,
       phone,
+      subject,
+      schedule,
       message,
     };
 
@@ -47,6 +49,8 @@ const ContactForm = () => {
         setName('');
         setEmail('');
         setPhone('');
+        setSubject('');
+        setSchedule(null);
         setMessage('');
         setTimeout(() => setStatus(null), 5000);
       } else {
@@ -63,7 +67,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-primary/10 p-4 md:p-8 rounded-xl">
+    <div className="bg-primary/10 p-4 px-8 rounded-xl">
       <p className="text-sm text-primary text-center font-semibold mb-5">Send Us A Message</p>
       <form onSubmit={handleSubmit}>
         <label htmlFor="fullName" className="text-sm">
@@ -102,6 +106,26 @@ const ContactForm = () => {
           />
         </label>
 
+        <div className="flex items-center gap-4 flex-wrap">
+          <label htmlFor="subject" className="text-sm">
+            Subject
+            <SubjectPicker
+              id='subject'
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+            />
+          </label>
+
+          <label htmlFor="schedule" className="text-sm">
+            Schedule
+            <SchedulePicker
+              id="schedule"
+              selected={schedule}
+              onChange={(date) => setSchedule(date)}
+            />
+          </label>
+        </div>
+
         <label htmlFor="message" className="text-sm">
           Message
           <MessageField
@@ -123,13 +147,18 @@ const ContactForm = () => {
         </div>
 
         <button
-          className={`w-full rounded-full bg-primary shadow-lg text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease
-              ${isLoading ? 'bg-gray-400 border-gray-400' : 'bg-primary'}
-              `}
+          className={`w-full rounded-xl shadow-lg text-primary-content text-xs md:text-sm font-semibold p-2 md:px-4 md:py-3 cursor-pointer hover:scale-102 transition-transform duration-300 ease
+          ${isLoading ? 'bg-gray-400 border-gray-400' : 'bg-primary'}
+          `}
           type='submit'
           disabled={isLoading}
         >
-          {isLoading ? <LoaderCircle className="animate-spin size-5 mx-auto" /> : 'Submit'}
+          {isLoading ? (
+            <div className="flex items-center justify-center gap-2">
+              <LoaderCircle className="animate-spin size-5" />
+              Submitting...
+            </div>
+          ) : 'Submit'}
         </button>
       </form>
     </div>

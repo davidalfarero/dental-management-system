@@ -75,7 +75,7 @@ const ContactPage = () => {
             {/* fb icon */}
             <a href="">
               <svg
-                class="w-10 h-10"
+                className="w-10 h-10"
                 fill='#0866FF'
                 role="img"
                 viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ const ContactPage = () => {
             {/* ig icon */}
             <a href="">
               <svg
-                class='w-10 h-10'
+                className='w-10 h-10'
                 fill='#FF0069'
                 role="img"
                 viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ const ContactPage = () => {
             {/* tiktok icon */}
             <a href="">
               <svg
-                class='w-10 h-10'
+                className='w-10 h-10'
                 fill='#000000'
                 role="img"
                 viewBox="0 0 24 24"
