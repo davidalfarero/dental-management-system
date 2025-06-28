@@ -76,7 +76,7 @@ const AboutPage = () => {
                   className={`order-2 ${isReversed ? "md:order-1" : "md:order-2"} w-full h-80 overflow-hidden`}
                 >
                   <img
-                    src={`/${dentist.image}`}
+                    src={dentist.image}
                     alt={dentist.name}
                     className="w-full h-full object-fit"
                   />
@@ -96,7 +96,7 @@ const AboutPage = () => {
           >
 
             <img
-              src={`/${selectedAbout.image}`}
+              src={selectedAbout.image}
               alt={selectedAbout.title}
               className="w-full h-full object-fit"
             />

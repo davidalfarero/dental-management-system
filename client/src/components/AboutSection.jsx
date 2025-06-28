@@ -2,23 +2,27 @@ import { useState } from 'react';
 import { ArrowRight, HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
 import { Button, SectionTitle } from '../styles/UI';
 
+import aboutFacility from '../assets/aboutImages/image-facility.jpg';
+import aboutPatient from '../assets/aboutImages/image-patient.jpg';
+import aboutTeam from '../assets/aboutImages/image-team.jpg';
+
 export const details = [
   {
     title: "Experienced Team",
     content: "Our dentists and staff are highly skilled with years of experience in delivering exceptional dental care. You’re in good hands from the moment you walk in.",
-    image: "/about-image(1).jpg",
+    image: aboutTeam,
     icon: <IdCardLanyard className="w-5 h-5 text-primary" />
   },
   {
     title: "Patient-First Approach",
     content: "We prioritize your comfort, care, and confidence. Every treatment plan is tailored to your needs — with clear communication and a gentle touch.",
-    image: "/about-image(2).jpg",
+    image: aboutPatient,
     icon: <HeartPulse className="w-5 h-5 text-primary" />
   },
   {
     title: "Modern, Clean Facility",
     content: "Our clinic is equipped with the latest dental technology in a spotless, relaxing environment — designed to make your visit smooth and stress-free.",
-    image: "/about-image(3).jpg",
+    image: aboutFacility,
     icon: <Hospital className="w-5 h-5 text-primary" />
   }
 ];

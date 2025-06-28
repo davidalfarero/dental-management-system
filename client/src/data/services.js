@@ -1,8 +1,22 @@
+import cleaningIcon from '../assets/serviceIcons/cleaning.png';
+import bracesIcon from '../assets/serviceIcons/braces.png';
+import checkupIcon from '../assets/serviceIcons/checkup.png';
+import extractionIcon from '../assets/serviceIcons/extraction.png';
+import fillingsIcon from '../assets/serviceIcons/fillings.png';
+import whiteningIcon from '../assets/serviceIcons/whitening.png';
+
+import cleaningImage from '../assets/serviceImages/image-cleaning.png';
+import bracesImage from '../assets/serviceImages/image-braces.png';
+import checkupImage from '../assets/serviceImages/image-checkup.png';
+import extractionImage from '../assets/serviceImages/image-extraction.png';
+import fillingsImage from '../assets/serviceImages/image-fillings.png';
+import whiteningImage from '../assets/serviceImages/image-whitening.png';
+
 export const services = [
   {
     id: 'cleaning',
-    icon: '/logo-dentalcleaning.png',
-    image: "/image-dentalCleaning.png",
+    icon: cleaningIcon,
+    image: cleaningImage,
     title: 'Teeth Cleaning',
     description: 'Keep your teeth plaque-free and sparkling with a thorough cleaning by our dental hygienists.',
     details: `Professional teeth cleaning is one of the most effective ways to maintain a healthy and confident smile. While daily brushing and flossing help, they can't remove all the plaque and tartar that accumulate in hard-to-reach areas over time. These deposits can lead to tooth decay, gum inflammation, and bad breath if left untreated. A professional cleaning reaches beyond your home routine to deeply clean and refresh your mouth, giving you a brighter, healthier smile.
@@ -15,8 +29,8 @@ export const services = [
   },
   {
     id: 'checkup',
-    icon: '/logo-dentalcheckup.png',
-    image: '/image-dentalCheckup.png',
+    icon: checkupIcon,
+    image: checkupImage,
     title: 'Dental Checkup',
     description: 'Regular checkups help catch potential issues early and keep your oral health in top shape.',
     details: `A dental checkup is a key part of keeping your oral health in excellent condition. Even if your teeth feel fine, regular examinations can detect early signs of issues that might go unnoticed until they become more serious. Checkups help us monitor your dental health over time and provide tailored advice for preventing problems before they start.
@@ -29,8 +43,8 @@ export const services = [
   },
   {
     id: 'whitening',
-    icon: '/logo-dentalwhitening.png',
-    image: '/image-dentalWhitening.png',
+    icon: whiteningIcon,
+    image: whiteningImage,
     title: 'Teeth Whitening',
     description: 'Brighten your smile safely and effectively with our in-office or take-home whitening options.',
     details: `Teeth whitening is one of the most popular cosmetic dental treatments, and for good reason. A brighter smile can boost your confidence, enhance your appearance, and make you feel more comfortable in social and professional settings. Over time, teeth can become stained by coffee, tea, wine, tobacco, or even natural aging — whitening helps reverse those effects safely and effectively.
@@ -43,8 +57,8 @@ export const services = [
   },
   {
     id: 'fillings',
-    icon: '/logo-dentalfillings.png',
-    image: '/image-dentalFillings.png',
+    icon: fillingsIcon,
+    image: fillingsImage,
     title: 'Tooth Fillings',
     description: 'We treat cavities using natural-looking fillings that blend seamlessly with your teeth.',
     details: `Tooth fillings are a common and effective way to restore teeth affected by cavities or minor damage. When left untreated, tooth decay can spread deeper into the tooth, causing pain, sensitivity, and even infection. Fillings stop decay in its tracks and help strengthen and protect the affected tooth.
@@ -58,8 +72,8 @@ export const services = [
   },
   {
     id: 'removal',
-    icon: '/logo-dentalremoval.png',
-    image: '/image-dentalExtraction.png',
+    icon: extractionIcon,
+    image: extractionImage,
     title: 'Tooth Extraction',
     description: 'Whether it’s a wisdom tooth or a problematic molar, we provide gentle and safe extractions.',
     details: `While we always aim to preserve natural teeth whenever possible, there are times when a tooth extraction becomes necessary for your overall health. Severely decayed, damaged, or infected teeth can cause pain and may lead to complications if not removed. Extractions are also sometimes required for orthodontic reasons or to make room for other treatments.
@@ -72,8 +86,8 @@ export const services = [
   },
   {
     id: 'braces',
-    icon: '/logo-dentalbraces.png',
-    image: '/image-dentalBraces.png',
+    icon: bracesIcon,
+    image: bracesImage,
     title: 'Dental Braces',
     description: 'Straighten your teeth and improve your bite with modern, comfortable orthodontic treatments.',
     details: `Dental braces are a proven solution for correcting misaligned teeth, bite issues, and jaw irregularities. Whether you're dealing with crowding, gaps, or crooked teeth, braces can help create a more functional and visually pleasing smile. Orthodontic treatment improves not just aesthetics, but also your long-term oral health.
