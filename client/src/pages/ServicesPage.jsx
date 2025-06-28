@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { SectionTitle, SwiperNavButtons } from "../styles/UI";
+import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { services } from '../data/services';
-import { Navigation } from 'swiper/modules';
-import { aboutInfo } from '../data/aboutInfo';
+import { SectionTitle, SwiperNavButtons } from "../styles/UI";
 
 
 const ServicesPage = () => {
@@ -56,12 +55,12 @@ const ServicesPage = () => {
                 onClick={() => setSelectedIndex(service.id)}
               >
                 <h3 className='font-semibold text-center mb-2'>{service.title}</h3>
-                <div className='avatar mb-2'>
-                  <div className='rounded-3xl'>
+                <div className='mb-2 flex items-center justify-center'>
+                  <div className='w-35 h-35 rounded-3xl overflow-hidden'>
                     <img
                       src={service.icon}
                       alt={service.title}
-                      className="object-contain h-full w-full"
+                      className="object-contain w-full h-full"
                     />
                   </div>
                 </div>
