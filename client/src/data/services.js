@@ -1,16 +1,16 @@
-import cleaningIcon from '../assets/serviceIcons/cleaning.png';
-import bracesIcon from '../assets/serviceIcons/braces.png';
-import checkupIcon from '../assets/serviceIcons/checkup.png';
-import extractionIcon from '../assets/serviceIcons/extraction.png';
-import fillingsIcon from '../assets/serviceIcons/fillings.png';
-import whiteningIcon from '../assets/serviceIcons/whitening.png';
+import cleaningIcon from '../assets/serviceIcons/cleaning.webp';
+import bracesIcon from '../assets/serviceIcons/braces.webp';
+import checkupIcon from '../assets/serviceIcons/checkup.webp';
+import extractionIcon from '../assets/serviceIcons/extraction.webp';
+import fillingsIcon from '../assets/serviceIcons/fillings.webp';
+import whiteningIcon from '../assets/serviceIcons/whitening.webp';
 
-import cleaningImage from '../assets/serviceImages/image-cleaning.png';
-import bracesImage from '../assets/serviceImages/image-braces.png';
-import checkupImage from '../assets/serviceImages/image-checkup.png';
-import extractionImage from '../assets/serviceImages/image-extraction.png';
-import fillingsImage from '../assets/serviceImages/image-fillings.png';
-import whiteningImage from '../assets/serviceImages/image-whitening.png';
+import cleaningImage from '../assets/serviceImages/image-cleaning.webp';
+import bracesImage from '../assets/serviceImages/image-braces.webp';
+import checkupImage from '../assets/serviceImages/image-checkup.webp';
+import extractionImage from '../assets/serviceImages/image-extraction.webp';
+import fillingsImage from '../assets/serviceImages/image-fillings.webp';
+import whiteningImage from '../assets/serviceImages/image-whitening.webp';
 
 export const services = [
   {

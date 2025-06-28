@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { ArrowRight, HeartPulse, Hospital, IdCardLanyard } from "lucide-react";
 import { Button, SectionTitle } from '../styles/UI';
 
-import aboutFacility from '../assets/aboutImages/image-facility.jpg';
-import aboutPatient from '../assets/aboutImages/image-patient.jpg';
-import aboutTeam from '../assets/aboutImages/image-team.jpg';
+import aboutOffice from '../assets/aboutImages/image-office.webp';
+import aboutPatient from '../assets/aboutImages/image-patient.webp';
+import aboutStaff from '../assets/aboutImages/image-staff.webp';
 
 export const details = [
   {
     title: "Experienced Team",
     content: "Our dentists and staff are highly skilled with years of experience in delivering exceptional dental care. You’re in good hands from the moment you walk in.",
-    image: aboutTeam,
+    image: aboutStaff,
     icon: <IdCardLanyard className="w-5 h-5 text-primary" />
   },
   {
@@ -22,7 +22,7 @@ export const details = [
   {
     title: "Modern, Clean Facility",
     content: "Our clinic is equipped with the latest dental technology in a spotless, relaxing environment — designed to make your visit smooth and stress-free.",
-    image: aboutFacility,
+    image: aboutOffice,
     icon: <Hospital className="w-5 h-5 text-primary" />
   }
 ];
@@ -76,7 +76,7 @@ const AboutSection = () => {
           <img
             src={selectedAbout.image}
             alt={selectedAbout.title}
-            className="rounded-xl shadow-md w-full h-auto object-cover max-h-[400px] mx-auto"
+            className="rounded-xl shadow-md w-full h-auto object-cover max-h-[300px] mx-auto"
           />
         </div>
       </div>

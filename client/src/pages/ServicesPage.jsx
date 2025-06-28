@@ -27,51 +27,53 @@ const ServicesPage = () => {
         subtitle='From personalized consultations to comprehensive care, discover how we’re here to support your needs every step of the way.'
       />
 
-      {swiperReady && (
-        <Swiper
-          modules={[Navigation]}
-          // spaceBetween={16}
-          slidesPerView={2}
-          breakpoints={{
-            640: { slidesPerView: 3 },
-            1024: { slidesPerView: 5 },
-          }}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }}
-        >
-          {services.map((service) => (
-            <SwiperSlide key={service.id}>
+      <div className='px-4 md:px-0'>
+        {swiperReady && (
+          <Swiper
+            modules={[Navigation]}
+            // spaceBetween={16}
+            slidesPerView={2}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              1024: { slidesPerView: 5 },
+            }}
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
+              swiper.params.navigation.prevEl = prevRef.current;
+              swiper.params.navigation.nextEl = nextRef.current;
+            }}
+          >
+            {services.map((service) => (
+              <SwiperSlide key={service.id}>
 
-              <div
-                className={`relative cursor-pointer rounded-3xl p-4
+                <div
+                  className={`relative cursor-pointer rounded-3xl p-4
                 ${service.id === selectedIndex ? 'bg-primary/20' : 'bg-base-100'}
                 `}
-                onClick={() => setSelectedIndex(service.id)}
-              >
-                <h3 className='font-semibold text-center mb-2'>{service.title}</h3>
-                <div className='mb-2 flex items-center justify-center'>
-                  <div className='w-35 h-35 rounded-3xl overflow-hidden'>
-                    <img
-                      src={service.icon}
-                      alt={service.title}
-                      className="object-contain w-full h-full"
-                    />
+                  onClick={() => setSelectedIndex(service.id)}
+                >
+                  <h3 className='font-semibold text-center mb-2'>{service.title}</h3>
+                  <div className='mb-2 flex items-center justify-center'>
+                    <div className='w-35 h-35 rounded-3xl overflow-hidden'>
+                      <img
+                        src={service.icon}
+                        alt={service.title}
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
                   </div>
+
+                  <p className='text-xs text-base-content/60'>{service.description}</p>
                 </div>
+              </SwiperSlide>
+            ))}
 
-                <p className='text-xs text-base-content/60'>{service.description}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-
-        </Swiper>
-      )}
+          </Swiper>
+        )}
+      </div>
 
       <SwiperNavButtons prevRef={prevRef} nextRef={nextRef} />
 

@@ -9,7 +9,7 @@ const HeroSection = () => {
     <main className="relative h-[calc(100vh-3.75rem)] md:h-[calc(100vh-5rem)] mt-15 md:mt-20">
       <div className="absolute w-full h-full opacity-60">
         <img
-          src="/dental-coverPhoto.png"
+          src="/cover-photo.webp"
           className="w-full h-full object-cover object-[80%_center]"
         />
       </div>

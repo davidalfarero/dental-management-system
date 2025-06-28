@@ -73,12 +73,12 @@ const AboutPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
                   viewport={{ once: true }}
-                  className={`order-2 ${isReversed ? "md:order-1" : "md:order-2"} w-full h-80 overflow-hidden`}
+                  className={`order-2 ${isReversed ? "md:order-1" : "md:order-2"} w-full h-80 rounded-2xl overflow-hidden`}
                 >
                   <img
                     src={dentist.image}
                     alt={dentist.name}
-                    className="w-full h-full object-fit"
+                    className="w-full h-full object-cover"
                   />
                 </motion.div>
               </div>
@@ -92,13 +92,13 @@ const AboutPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
             viewport={{ once: true }}
-            className="w-full h-80 overflow-hidden"
+            className="w-full h-80 rounded-2xl overflow-hidden"
           >
 
             <img
               src={selectedAbout.image}
               alt={selectedAbout.title}
-              className="w-full h-full object-fit"
+              className="w-full h-full object-cover"
             />
           </motion.div>
           <div>
